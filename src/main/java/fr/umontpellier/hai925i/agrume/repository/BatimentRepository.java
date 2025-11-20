@@ -18,5 +18,6 @@ public interface BatimentRepository extends JpaRepository<Batiment, String> {
     @Query("SELECT b FROM Batiment b WHERE b.id IN :ids")
     List<Batiment> findByIds(@Param("ids") List<String> ids);
 
-    List<Batiment> findByCampus(Campus campus);
+    @Query("SELECT b FROM Batiment b WHERE b.campus = :campus")
+    List<Batiment> findByCampus(@Param("campus") Campus campus);
 }
