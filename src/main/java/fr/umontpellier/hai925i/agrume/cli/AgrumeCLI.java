@@ -73,6 +73,27 @@ public class AgrumeCLI implements CommandLineRunner {
             }
         }
 
+        System.out.println("\n--- Test de Persistance (ajout/suppression d'un objet d'un repository) ---");
+
+        Campus testCampus = new Campus("CampusTest", "Montpellier");
+        campusRepository.save(testCampus);
+        System.out.println("Ajout effectué: " + testCampus + ".");
+
+        if (campusRepository.existsById("CampusTest")) {
+            System.out.println("Vérification: Le campus existe en base");
+        } else {
+            System.out.println("Erreur: Le campus n'a pas été sauvegardé");
+        }
+
+        campusRepository.delete(testCampus);
+        System.out.println("Suppression effectuée.");
+
+        if (!campusRepository.existsById("CampusTest")) {
+            System.out.println("Vérification: Le campus n'existe plus en base");
+        } else {
+            System.out.println("Erreur: Le campus existe toujours");
+        }
+
         System.out.println("\n=================================");
         System.out.println("           FIN DU TEST          ");
         System.out.println("=================================\n");
