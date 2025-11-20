@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"> <head>
+    <title>AGRUME > Liste des campus</title>
+</head>
+<body>
+
+<h1>Gestion des Campus</h1>
+
+<a th:href="@{/campus/new}">+ Ajouter un nouveau campus</a>
+<br/><br/>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>Nom</th>
+        <th>Ville</th>
+        <th>Bâtiments</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="c : ${listeDesCampus}">
+        <td th:text="${c.nom}">Nom fictif</td>
+        <td th:text="${c.ville}">Ville fictive</td>
+        <td th:text="${#lists.size(c.batiments)}">0</td>
+        <td>
+            <a th:href="@{/campus/delete/{id}(id=${c.nom})}">Supprimer</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
