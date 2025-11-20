@@ -10,8 +10,10 @@ import fr.umontpellier.hai925i.agrume.model.*;
 
 
 @Repository
-public interface CampusRepository extends JpaRepository<Campus, String> {
+public interface SalleRepository extends JpaRepository<Salle, String> {
 
-    List<Campus> findByVille(String ville);
+    List<Salle> findByBatiment(Batiment batiment);
+
+    List<Salle> findByType(String type);
 
 }

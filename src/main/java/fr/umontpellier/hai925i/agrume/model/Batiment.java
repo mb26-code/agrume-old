@@ -2,12 +2,13 @@ package fr.umontpellier.hai925i.agrume.model;
 
 import jakarta.persistence.*;
 
+
 @Entity
 public class Batiment {
     @Id
-    private String codeB;
+    private String id;
 
-    private int anneeC;
+    private int annee;
 
     @ManyToOne
     @JoinColumn(name="campus")
@@ -16,27 +17,28 @@ public class Batiment {
 
     public Batiment() {}
 
-    public Batiment(String codeB, int anneeC, Campus campus) {
+    public Batiment(String id, int annee, Campus campus) {
         super();
-        this.codeB = codeB;
-        this.anneeC = anneeC;
+        this.id = id;
+        this.annee = annee;
         this.campus = campus;
     }
 
-    public String getCodeB() {
-        return codeB;
+
+    public String getId() {
+        return id;
     }
 
-    public void setCodeB(String codeB) {
-        this.codeB = codeB;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public int getAnneeC() {
-        return anneeC;
+    public int getAnnee() {
+        return annee;
     }
 
-    public void setAnneeC(int anneeC) {
-        this.anneeC = anneeC;
+    public void setAnnee(int annee) {
+        this.annee = annee;
     }
 
     public Campus getCampus() {
@@ -47,9 +49,10 @@ public class Batiment {
         this.campus = campus;
     }
 
+
     @Override
     public String toString() {
-        return "Batiment [codeB=" + codeB  + ", anneeC=" + anneeC + "]";
+        return "Batiment { id: " + id + ", annee: " + annee + " }";
     }
 
 }
