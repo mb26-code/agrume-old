@@ -22,10 +22,15 @@ public class DatabaseInitializer implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        System.out.println("--- Remplissage de la base de données AGRUME ---");
+        System.out.println("\n============================================");
+        System.out.println("   Remplissage de la base de données AGRUME ");
+        System.out.println("============================================\n");
 
-        System.out.println("...");
+        System.out.println("DatabaseInitializer non-implémenté pour l'instant.");
+        System.out.println("(données ajoutées manuellement via le terminal)");
 
-        System.out.println("--- Bases de données remplie ---");
+        System.out.println("\n========================================");
+        System.out.println("        Base de données remplie ");
+        System.out.println("========================================\n");
     }
 }

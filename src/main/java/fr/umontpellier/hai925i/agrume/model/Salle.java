@@ -11,8 +11,9 @@ public class Salle {
 
     private int capacite;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "type_")
-    private String type;
+    private TypeSalle type;
 
     private String acces;
 
@@ -27,7 +28,7 @@ public class Salle {
     public Salle() {
     }
 
-    public Salle(String numero, int capacite, String type, String acces, String etage, Batiment batiment) {
+    public Salle(String numero, int capacite, TypeSalle type, String acces, String etage, Batiment batiment) {
         super();
         this.numero = numero;
         this.capacite = capacite;
@@ -53,11 +54,11 @@ public class Salle {
         this.capacite = capacite;
     }
 
-    public String getType() {
+    public TypeSalle getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(TypeSalle type) {
         this.type = type;
     }
 
