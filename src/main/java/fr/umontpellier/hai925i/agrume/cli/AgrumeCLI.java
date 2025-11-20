@@ -76,6 +76,6 @@ public class AgrumeCLI implements CommandLineRunner {
         System.out.println("\n=================================");
         System.out.println("           FIN DU TEST          ");
         System.out.println("=================================\n");
-        
+
     }
 }
