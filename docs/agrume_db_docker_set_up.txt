@@ -1,9 +1,3 @@
-Rappel énoncé du projet:
-"Vous construirez un projet Spring Boot avec mobilisation du module Spring Data JPA qui permettra de tirer parti, au sein d’une
-couche m´etier, du contenu d’une base de donn´ees relationnelle. Les exemples donn´es s’adossent au
-syst`eme de gestion de bases de donn´ees relationnel MySQL mais vous pouvez faire le choix d’un autre
-SGBDR (PostgreSQL, MariaDB, H2, SQLite, . . .)"
-
 
 Setup Docker et DB:
 
@@ -24,21 +18,3 @@ Dans le CLI MySQL:
 CREATE DATABASE AGRUME;
 USE AGRUME;
 
-
-CREATE USER 'admin_user'@'%' IDENTIFIED BY 'admin';
-GRANT ALL PRIVILEGES ON HAI925I_DB.* TO 'admin_user'@'%';
-FLUSH PRIVILEGES;
-
-mysql> CREATE DATABASE HAI925I_DB;
-Query OK, 1 row affected (0.01 sec)
-
-mysql> USE HAI925I_DB;
-Database changed
-
-mysql> CREATE USER 'admin_user'@'%' IDENTIFIED BY 'admin';
-Query OK, 0 rows affected (0.01 sec)
-
-mysql> GRANT ALL PRIVILEGES ON HAI925I_DB.* TO 'admin_user'@'%';
-Query OK, 0 rows affected (0.00 sec)
-
-mysql> FLUSH PRIVILEGES;

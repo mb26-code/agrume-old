@@ -1,5 +1,6 @@
 mehdi@ThinkPad-T16-G4:~/Code/Projects/agrume$ git status
 fatal: not a git repository (or any of the parent directories): .git
+
 mehdi@ThinkPad-T16-G4:~/Code/Projects/agrume$ tree
 .
 ├── HELP.md
@@ -38,6 +39,7 @@ mehdi@ThinkPad-T16-G4:~/Code/Projects/agrume$ tree
 
 25 directories, 9 files
 mehdi@ThinkPad-T16-G4:~/Code/Projects/agrume$ touch README.md
+
 mehdi@ThinkPad-T16-G4:~/Code/Projects/agrume$ ls
 HELP.md  mvnw  mvnw.cmd  pom.xml  README.md  src  target
 mehdi@ThinkPad-T16-G4:~/Code/Projects/agrume$ git init
@@ -52,8 +54,10 @@ hint: 'development'. The just-created branch can be renamed via this command:
 hint: 
 hint: 	git branch -m <name>
 Initialized empty Git repository in /home/mehdi/Code/Projects/agrume/.git/
+
 mehdi@ThinkPad-T16-G4:~/Code/Projects/agrume$ git add .
 warning: in the working copy of 'mvnw.cmd', LF will be replaced by CRLF the next time Git touches it
+
 mehdi@ThinkPad-T16-G4:~/Code/Projects/agrume$ git status
 On branch master
 
@@ -85,18 +89,25 @@ mehdi@ThinkPad-T16-G4:~/Code/Projects/agrume$ git commit -m "project start (conf
  create mode 100644 src/main/java/fr/umontpellier/hai925i/agrume/AgrumeApplication.java
  create mode 100644 src/main/resources/application.properties
  create mode 100644 src/test/java/fr/umontpellier/hai925i/agrume/AgrumeApplicationTests.java
+
 mehdi@ThinkPad-T16-G4:~/Code/Projects/agrume$ git remote -v
+
 mehdi@ThinkPad-T16-G4:~/Code/Projects/agrume$ git remote add origin "git@github.com:mb26-code/agrume.git"
+
 mehdi@ThinkPad-T16-G4:~/Code/Projects/agrume$ git remote -v
 origin	git@github.com:mb26-code/agrume.git (fetch)
 origin	git@github.com:mb26-code/agrume.git (push)
+
 mehdi@ThinkPad-T16-G4:~/Code/Projects/agrume$ git status
 On branch master
 nothing to commit, working tree clean
+
 mehdi@ThinkPad-T16-G4:~/Code/Projects/agrume$ git push -u origin main
 error: src refspec main does not match any
 error: failed to push some refs to 'github.com:mb26-code/agrume.git'
+
 mehdi@ThinkPad-T16-G4:~/Code/Projects/agrume$ git branch -M "main"
+
 mehdi@ThinkPad-T16-G4:~/Code/Projects/agrume$ git push -u origin main
 Enumerating objects: 28, done.
 Counting objects: 100% (28/28), done.
@@ -107,5 +118,3 @@ Total 28 (delta 0), reused 0 (delta 0), pack-reused 0
 To github.com:mb26-code/agrume.git
  * [new branch]      main -> main
 branch 'main' set up to track 'origin/main'.
-mehdi@ThinkPad-T16-G4:~/Code/Projects/agrume$ 
-
