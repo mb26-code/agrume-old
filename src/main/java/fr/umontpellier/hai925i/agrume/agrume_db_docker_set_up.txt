@@ -1,0 +1,44 @@
+Rappel énoncé du projet:
+"Vous construirez un projet Spring Boot avec mobilisation du module Spring Data JPA qui permettra de tirer parti, au sein d’une
+couche m´etier, du contenu d’une base de donn´ees relationnelle. Les exemples donn´es s’adossent au
+syst`eme de gestion de bases de donn´ees relationnel MySQL mais vous pouvez faire le choix d’un autre
+SGBDR (PostgreSQL, MariaDB, H2, SQLite, . . .)"
+
+
+Setup Docker et DB:
+
+*installation de Docker*
+
+mehdi@ThinkPad-T16-G4:~$ docker -v
+Docker version 28.5.1, build e180ab8
+
+mehdi@ThinkPad-T16-G4:~/Code/Projects/agrume$ sudo docker run -d -p 3306:3306 --name agrume-mysql-db --restart always -e MYSQL_ROOT_PASSWORD=agrume -e MYSQL_DATABASE=agrume_db mysql:8.0
+7dfd69f481d824de2a20b7eb25ff66480e5243066d03f4b9971c11216affde2a
+
+mehdi@ThinkPad-T16-G4:~/Code/Projects/agrume$ sudo docker ps
+CONTAINER ID   IMAGE       COMMAND                  CREATED         STATUS         PORTS                                                    NAMES
+7dfd69f481d8   mysql:8.0   "docker-entrypoint.s…"   8 seconds ago   Up 7 seconds   0.0.0.0:3306->3306/tcp, [::]:3306->3306/tcp, 33060/tcp   agrume-mysql-db
+
+Dans le CLI MySQL:
+
+CREATE DATABASE AGRUME;
+USE AGRUME;
+
+
+CREATE USER 'admin_user'@'%' IDENTIFIED BY 'admin';
+GRANT ALL PRIVILEGES ON HAI925I_DB.* TO 'admin_user'@'%';
+FLUSH PRIVILEGES;
+
+mysql> CREATE DATABASE HAI925I_DB;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> USE HAI925I_DB;
+Database changed
+
+mysql> CREATE USER 'admin_user'@'%' IDENTIFIED BY 'admin';
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> GRANT ALL PRIVILEGES ON HAI925I_DB.* TO 'admin_user'@'%';
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> FLUSH PRIVILEGES;
