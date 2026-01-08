@@ -1,7 +1,7 @@
 package fr.umontpellier.hai925i.agrume.controller;
 
 import fr.umontpellier.hai925i.agrume.model.Campus;
-import fr.umontpellier.hai925i.agrume.service.CampusService;
+import fr.umontpellier.hai925i.agrume.service.CampusServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 public class CampusController {
 
     @Autowired
-    private CampusService campusService;
+    private CampusServiceImpl campusService;
 
 
     @GetMapping
